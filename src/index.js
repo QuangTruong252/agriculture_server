@@ -6,7 +6,7 @@ const db = require('./config/db/index');
 require("dotenv").config();
 
 const app = express();
-const port = 5000;
+const PORT = process.env.PORT || 5000;
 
 
 // Connect to DB
@@ -20,4 +20,4 @@ app.use(cors());
 route(app);
 
 app.get("/", (req, res) => res.send("Hello Truong"));
-app.listen(port, () => console.log(`Listening at port http://localhost:${port}`));
+app.listen(PORT, () => console.log(`Listening at port http://localhost:${PORT}`));
